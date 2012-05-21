@@ -11,5 +11,16 @@
  *= require_self
  *= require formtastic
  *= require jquery.ui.all
- *= require_tree .
+ *= require mixins
+ *= require basic
+ *= require best_in_place
+ *= require common
+ *= require dashboard
+ *= require fonts
+ *= require forms
+ *= require formtastic_changes
+ *= require header
+ *= require registrations
+ *= require sprites
+ *= require type_kit_config
 */
