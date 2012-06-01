@@ -22,3 +22,8 @@ heroku-surify:
   server_name: surify.herokuapp.com
   facebook_key: 309608462447686
   facebook_secret: 828512130825a011e619044ecc5892d2
+
+heroku-sureify:
+  server_name: www.sureify.net
+  facebook_key: 394054687313604
+  facebook_secret: 51bfebaacd11c76b2318af1a6124b7ae
