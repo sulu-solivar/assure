@@ -13,6 +13,9 @@ gem "slim-rails"
 gem 'formtastic'
 gem 'best_in_place'
 
+gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
+
 group :development, :test do
   gem 'sqlite3'
   gem "rspec-rails", ">= 2.9.0.rc2"

@@ -7,9 +7,9 @@ class Profile < ActiveRecord::Base
 	accepts_nested_attributes_for :user
 
 	def score
-		@max_score = 997
+		@max_score = 971
 		@no_of_items = 18
-		@item_score = @max_score/@no_of_items
+		@item_score = (@max_score.to_f/@no_of_items.to_f).ceil
 	end
 
 	def work_score
@@ -74,12 +74,12 @@ class Profile < ActiveRecord::Base
 	end
 
 	def profile_completion
-		total_columns = Profile.columns.count - 4
+		total_columns = Profile.columns.count - 6
 		completed = 0
 		Profile.columns.each do |c|
 			(completed += 1) if self.try(c.name.to_sym).present?
 		end
-		filled_columns = completed - 4 # removing 4 columns because not filled by user
+		filled_columns = completed - 6 # removing 6 columns because not filled by user
 
 		return (filled_columns.to_f/total_columns.to_f)*100
 	end

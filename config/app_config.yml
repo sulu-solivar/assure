@@ -7,9 +7,12 @@ production:
   server_name: www.sureify.net
   facebook_key: 394054687313604
   facebook_secret: 51bfebaacd11c76b2318af1a6124b7ae
-  #server_name: assure.herokuapp.com
-  #facebook_key: 282524125170321
-  #facebook_secret: 3b63ba8466e9f1a977402f4653231457
+
+
+# production:
+#   server_name: assure.herokuapp.com
+#   facebook_key: 282524125170321
+#   facebook_secret: 3b63ba8466e9f1a977402f4653231457
 
 test:
   server_name: localhost

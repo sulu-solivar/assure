@@ -44,7 +44,7 @@ header {
 	@include success;
 }
 h1 {
-	color: #d9d9d9;
+	color: #000;
 	font-size: 40px;
 }
 h2 {
@@ -58,7 +58,7 @@ h3 {
 	@include shadow;
 }
 .component {
-	@include component_border;
+	// @include component_border;
 	@include p10;
 }
 li {
@@ -137,4 +137,10 @@ a {
 }
 .absolute {
 	@include absolute;
+}
+.db {
+	@include db;
+}
+.dn {
+	@include dn;
 }
