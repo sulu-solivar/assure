@@ -9,6 +9,6 @@ li#relationship_info
 			= best_in_place profile, :relationship_status, :type => :select, :collection => relationships, :nil => 'Choose relationship status'
 			/ |I am married to
 			/ = best_in_place profile, :related_to, :nil => "(persons name)"
-			/ |I have
-			/ = best_in_place profile, :no_of_kids, :nil => '(No, One, Two...Eight)'
-			/ |children
+			|and I have
+			= best_in_place profile, :no_of_kids, :nil => '(No, One, Two...Eight)'
+			|children
