@@ -2,13 +2,13 @@ header
 	.container
 		- if user_signed_in?
 			.top_links
-				.icon.fl
+				.icon.fl.dn
 					.update
-				.icon.fl
+				.icon.fl.dn
 					.cancel
-				.icon.fl
+				.icon.fl.dn
 					.add
-				.icon.fl
+				.icon.fl.dn
 					= link_to raw("<div class='settings'></div>"), edit_profile_path(current_user)
 				.fr.top_links_container
 					= link_to 'Home', home_path

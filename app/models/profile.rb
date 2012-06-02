@@ -7,9 +7,9 @@ class Profile < ActiveRecord::Base
 	accepts_nested_attributes_for :user
 
 	def score
-		@max_score = 997
+		@max_score = 999
 		@no_of_items = 18
-		@item_score = @max_score/@no_of_items
+		@item_score = (@max_score.to_f/@no_of_items).round
 	end
 
 	def work_score
