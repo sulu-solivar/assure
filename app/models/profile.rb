@@ -74,13 +74,13 @@ class Profile < ActiveRecord::Base
 	end
 
 	def profile_completion
-		total_columns = Profile.columns.count - 6
+		total_columns = Profile.columns.count - 0
 		completed = 0
 		Profile.columns.each do |c|
 			(completed += 1) if self.try(c.name.to_sym).present?
 		end
-		filled_columns = completed - 6 # removing 6 columns because not filled by user
-
+		filled_columns = completed - 0 # removing 0 columns because not filled by user
+		filled_columns += 1
 		return (filled_columns.to_f/total_columns.to_f)*100
 	end
 

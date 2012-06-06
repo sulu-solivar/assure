@@ -1,14 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-# Create a default user
-if AdminUser.count == 0
-	puts "Creating Admin account"
-	AdminUser.create(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password')
+# Creating a guest account
+guest = User.find_by_email('guest@sureify.com')
+if guest == nil
+	puts "Creating Guest Account"
+	guest_user = User.create( :email => 'guest@sureify.com', :first_name => 'Guest', :last_name => 'User', :password => 'password', :password_confirmation => 'password' )
+	guest_user.create_profile( :about => 'Lorem ipsum dolor sit amet' )
 end
 
+# Creating an admin user
+if AdminUser.count == 0
+	puts "Creating Admin account"
+	AdminUser.create(:email => 'admin@suriefy.com', :password => 'password', :password_confirmation => 'password')
+end

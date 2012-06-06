@@ -21,6 +21,7 @@ Assure::Application.routes.draw do
 
   match 'welcome' => 'home#welcome' # just for testing layout
   match '/' => 'home#index', :as => 'home'
+  match 'guest' => 'home#guest', :as => 'guest'
 
   resources :users
   resources :authentications

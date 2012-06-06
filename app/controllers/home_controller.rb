@@ -1,13 +1,13 @@
 class HomeController < ApplicationController
 
-	before_filter :authenticate_user!, :except => [ :welcome ]
+	before_filter :authenticate_user!, :except => [ :welcome, :guest ]
 
 	def index
 		@user = current_user
 		if @user.profile.birthday.presence
 			@birthday = @user.profile.birthday.strftime("%B %e, %Y")
 		end
-		@authentications = current_user.authentications if current_user
+		@authentications = @user.authentications if current_user
 
 		respond_to do |format|
 			format.js {}
@@ -17,6 +17,10 @@ class HomeController < ApplicationController
 
 	def welcome
 		render :layout => 'dummy'
+	end
+
+	def guest
+		render :partial => 'devise/sessions/temp'
 	end
 
 end

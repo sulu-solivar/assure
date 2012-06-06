@@ -1,0 +1,11 @@
+<%= form_for( User.new, :as => :user, :url => session_path(:user) ) do |f| %>
+  
+  <%#= beautify_params f.label(:email), f.email_field(:email) %>
+  <%#= beautify_params f.label(:password), f.password_field(:password) %>
+
+  <%= f.hidden_field :email, :value => 'guest@sureify.com' %>
+  <%= f.hidden_field :password, :value => 'password' %>
+
+  <%= f.submit "Sign in Guest", :class => 'btn' %>
+
+<% end %>

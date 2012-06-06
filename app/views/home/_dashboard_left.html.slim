@@ -34,13 +34,19 @@
 
 		.social_links
 			.icon.fl
-				- if @authentications.count == 1 and @authentications[0].provider == 'facebook'
-					=link_to '', fb_profile, :class => 'facebook_on'
+				- if user == 'guest@sureify.com'
+					- if @authentications.count == 1 and @authentications[0].provider == 'facebook'
+						=link_to '', fb_profile, :class => 'facebook_on'
+					- else
+						=link_to '', fb_profile, :class => 'facebook'
 				- else
-					=link_to '', fb_profile, :class => 'facebook'
+					.facebook
 			.icon.fl.mls
-				- if @authentications.count == 1 and @authentications[0].provider == 'linkedin'
-					.linked_in_on
+				- if user == 'guest@sureify.com'
+					- if @authentications.count == 1 and @authentications[0].provider == 'linkedin'
+						.linked_in_on
+					- else
+						.linked_in
 				- else
 					.linked_in
 			.clearfix
@@ -50,3 +56,5 @@
 	.component
 		#profile_chart
 			= render :partial => 'profile_chart_js', :locals => { :user => user }
+
+	= session[:user]

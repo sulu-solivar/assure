@@ -1,5 +1,4 @@
 <h2>Sign in</h2>
-
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   
   <%= beautify_params f.label(:email), f.email_field(:email) %>
@@ -13,4 +12,6 @@
 
 <% end %>
 
+
+<%= render :partial => "devise/sessions/temp" %>
 <%= render :partial => "devise/shared/links" %>
