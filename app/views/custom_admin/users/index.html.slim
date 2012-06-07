@@ -1,0 +1,24 @@
+table cellpadding="5" class="table_bordered admin_table_display"
+	tr
+		th Email
+		th First name
+		th Last name
+		th Sign in Count
+		th Current Sign in at
+		th Last Sign in at
+		th current Sign in IP
+		th Last Sign in IP
+		th created at
+	
+	- @users.each do |u|
+		tr
+			td= u.email
+			td= u.first_name
+			td= u.last_name
+			td= u.sign_in_count
+			td= u.current_sign_in_at
+			td= u.last_sign_in_at
+			td= u.current_sign_in_ip
+			td= u.last_sign_in_ip
+			td= u.created_at
+		

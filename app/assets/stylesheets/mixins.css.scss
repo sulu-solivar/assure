@@ -6,6 +6,11 @@ $yellow: #ffcf06;
 $black: #000;
 $border_color: #dbdbdb;
 $default_link: #389ad5;
+@mixin rad($radius) {
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}
 @mixin rad1 {
 	-webkit-border-radius: 1px;
 	-moz-border-radius: 1px;

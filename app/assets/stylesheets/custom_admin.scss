@@ -1,0 +1,33 @@
+@import 'mixins';
+
+@mixin bordered_table {
+	@include rad(5px);
+	border-collapse: collapse;
+	td, th {
+		border: 1px solid #AAA;
+	}
+	th {
+		&:first-child {
+			@include rad(5px 0px 0px 0px);
+		}
+		&:last-child {
+			@include rad(0px 5px 0px 0px);
+		}
+	}
+}
+
+@mixin admin_table_display {
+	th {
+		background: #333;
+		color: #FFF;
+		border: 1px solid #333;
+	}
+}
+
+.table_bordered {
+	@include bordered_table;
+}
+
+.admin_table_display {
+	@include admin_table_display;
+}

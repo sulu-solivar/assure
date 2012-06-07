@@ -1,0 +1,2 @@
+module CustomAdmin::UsersHelper
+end
