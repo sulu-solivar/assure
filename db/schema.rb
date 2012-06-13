@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120521221916) do
+ActiveRecord::Schema.define(:version => 20120613114508) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -50,6 +50,29 @@ ActiveRecord::Schema.define(:version => 20120521221916) do
     t.integer  "user_id"
     t.string   "provider"
     t.string   "uid"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "insurances", :force => true do |t|
+    t.integer  "plan_id"
+    t.string   "carrier_name"
+    t.string   "plan_name"
+    t.string   "policy_number"
+    t.date     "start_date"
+    t.date     "renewal_date"
+    t.float    "annual_premium"
+    t.text     "comment"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "user_id"
+    t.text     "link"
+  end
+
+  add_index "insurances", ["plan_id"], :name => "index_insurances_on_plan_id"
+
+  create_table "plans", :force => true do |t|
+    t.string   "plan"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

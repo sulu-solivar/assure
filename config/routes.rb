@@ -25,9 +25,8 @@ Assure::Application.routes.draw do
 
   resources :users
   resources :authentications
-  resources :profile do
-    # get '/:uid' => 'profiles#public', :as => 'public', :constraints => { :uid => /\d+/ }
-  end
+  resources :profile
+  resources :insurances
 
   namespace :custom_admin do
     resources :users

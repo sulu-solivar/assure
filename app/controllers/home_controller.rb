@@ -8,6 +8,7 @@ class HomeController < ApplicationController
 			@birthday = @user.profile.birthday.strftime("%B %e, %Y")
 		end
 		@authentications = @user.authentications if current_user
+		@insurances = current_user.insurances
 
 		respond_to do |format|
 			format.js {}

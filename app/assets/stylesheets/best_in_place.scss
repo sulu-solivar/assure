@@ -1,5 +1,6 @@
 @import 'mixins';
 
+
 .best_in_place {
 	input, textarea, select {
 		border: none;
@@ -12,6 +13,15 @@
 		&:focus {
 			outline-style: none;
 		}
+	}
+	input[type="text"] {
+		width: 80px;
+	}
+}
+
+.fb {
+	.best_in_place {
+		font-weight: bold;
 	}
 }
 

@@ -6,6 +6,9 @@ $yellow: #ffcf06;
 $black: #000;
 $border_color: #dbdbdb;
 $default_link: #389ad5;
+$gray: #777;
+$green: #96bd03;
+
 @mixin rad($radius) {
 	-moz-border-radius: $radius;
 	-webkit-border-radius: $radius;
@@ -274,4 +277,24 @@ $default_link: #389ad5;
 @mixin profile_pic_size {
 	height: 76px;
 	width: 76px;
+}
+
+@mixin green_text {
+	color: $green;
+}
+@mixin gray_text {
+	color: $gray;
+}
+
+@mixin blue_text {
+	color: $default_link;
+}
+
+@mixin green_head {
+	@include green_text;
+	@include fb;
+	line-height: 25px;
+}
+@mixin black_text {
+	color: $black;
 }

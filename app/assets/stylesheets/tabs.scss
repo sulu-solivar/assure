@@ -1,0 +1,28 @@
+@import 'mixins';
+
+.contents li {
+	@include dn;
+}
+
+.insurance_tabs_container, .insurance_contents_container {
+	width: 300px;
+	word-wrap: break-word;
+}
+.insurance_contents_container {
+	@include ml(35px);
+}
+
+.insurance_tab_connector {
+	@include absolute;
+	@include dn;
+	cursor: default;
+	right: -37px;
+	top: -1px;
+	background: #FFF;
+	border-width: 1px 0px 1px 1px;
+	border-style: solid;
+	border-color: #DDD;
+	height: 45px;
+	width: 25px;
+	z-index: 300;
+}

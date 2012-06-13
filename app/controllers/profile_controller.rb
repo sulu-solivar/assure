@@ -21,13 +21,6 @@ class ProfileController < ApplicationController
 		user_details = params[:profile].delete(:user)
 		@user.profile.update_attributes params[:profile] and @user.update_attributes user_details
 		respond_with @user.profile
-			# redirect_to home_path, :notice => 'Successfully updated profile'
-			# respond_to do |format|
-			# 	format.html {
-			# 		redirect_to home_path
-			# 	}
-			# end
-		
 	end
 
 	def profile_info_variables

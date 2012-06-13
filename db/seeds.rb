@@ -9,5 +9,15 @@ end
 # Creating an admin user
 if AdminUser.count == 0
 	puts "Creating Admin account"
-	AdminUser.create(:email => 'admin@suriefy.com', :password => 'password', :password_confirmation => 'password')
+	AdminUser.create( :email => 'admin@suriefy.com', :password => 'password', :password_confirmation => 'password' )
+end
+
+# Creating isurance plans
+if Plan.count == 0
+	puts "Creating Plans"
+	plans = [ 'Medical', 'Dental', 'Vision', 'Auto', 'Life', 'Home' ]
+
+	plans.each do |p|
+		Plan.create( :plan => p )
+	end
 end

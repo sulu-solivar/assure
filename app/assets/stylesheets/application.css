@@ -23,5 +23,7 @@
  *= require registrations
  *= require sprites
  *= require type_kit_config
+ *= require lists
+ *= require tabs
  *= require custom_admin
 */

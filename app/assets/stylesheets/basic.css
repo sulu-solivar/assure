@@ -84,3 +84,11 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
 .navbar-search {
     margin-top: 5px !important;
 }
+
+.lh20 { line-height: 20px; }
+.lh25 { line-height: 25px; }
+.lh30 { line-height: 30px; }
+.lh35 { line-height: 35px; }
+.lh40 { line-height: 40px; }
+.lh45 { line-height: 45px; }
+.lh50 { line-height: 50px; }

@@ -1,0 +1,18 @@
+@import 'mixins';
+
+@mixin bordered_list {
+	li {
+		border: 1px solid #DDD !important;
+		@include p(10px !important);
+		@include mb(5px);
+		@include relative;
+	}
+}
+
+ul.bordered_list {
+	@include bordered_list;
+}
+
+.insurance_contents_container li {
+	min-height: 300px;
+}

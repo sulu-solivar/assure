@@ -5,6 +5,7 @@ body {
 	// background: url('main_bg.jpg') #f4f4f4 repeat;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 13px;
+	color: #444;
 	margin: 0px;
 	padding: 0px;
 }
@@ -87,6 +88,10 @@ a {
 	&:hover {
 		@include tdu;
 	}
+	&:focus {
+		outline-style: none;
+		@include tdu;
+	}
 }
 
 .link, .in_place_edit, .best_in_place {
@@ -143,4 +148,31 @@ a {
 }
 .dn {
 	@include dn;
+}
+.cp {
+	@include cp;
+}
+.green_text {
+	@include green_text;
+}
+.gray_text {
+	@include gray_text;
+}
+.blue_text {
+	@include blue_text;
+}
+.black_text {
+	@include black_text;
+}
+.green_head {
+	@include green_head;
+}
+.insurance_head {
+	@include pb(5px);
+	border-bottom: 1px dotted #DDD;
+}
+.blue_head {
+	@include blue_text;
+	@include fb;
+	line-height: 25px;
 }

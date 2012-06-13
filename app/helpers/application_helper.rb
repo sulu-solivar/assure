@@ -80,4 +80,9 @@ module ApplicationHelper
 
 		content_tag 'div', text_content + smiley_content, :class => 'black_box'
 	end
+
+	def placeholder width, height, opts = {}
+		image_tag "http://placehold.it/#{width}x#{height}", opts
+	end
+
 end

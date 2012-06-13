@@ -1,8 +1,11 @@
 class User < ActiveRecord::Base
-
-	# relations
+  
+  include GlobalMethods
+	
+  # relations
   has_many :authentications
   has_one :profile
+  has_many :insurances
   
   after_create :set_default_associations
 
@@ -28,6 +31,9 @@ class User < ActiveRecord::Base
 
   def set_default_associations
     self.create_profile
+    Plan.all.each do |p|
+      self.insurances.create( :plan_id => p.id, :carrier_name => 'Carrier name', :plan_name => 'Plan name', :policy_number => '3hjg3434ff4y3', :start_date => "#{ rand(31) + 1 }-#{ rand(12) + 1 }-2012", :renewal_date => "#{ rand(31) + 1 }-#{ rand(12) + 1 }-2013", :annual_premium => rand(45), :comment => 'test comment goes here' )
+    end
   end
   
 end
