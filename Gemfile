@@ -51,8 +51,8 @@ group :test do
   gem "capybara", ">= 1.1.2"
   gem "database_cleaner", ">= 0.7.1"
   gem "launchy", ">= 2.0.5"
-
 end
+
 gem 'libnotify', :group => :development
 gem 'rb-inotify', :group => :development
 gem "mocha", :group => :test

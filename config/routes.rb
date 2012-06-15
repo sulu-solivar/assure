@@ -14,7 +14,8 @@ Assure::Application.routes.draw do
     root :to => 'home#welcome'
   end
 
-  devise_for :users, :controllers => { :registrations => 'registrations' } do
+  devise_for :users, :controllers => { :registrations => 'registrations' }
+  devise_scope :users do
     get '/users/sign_out' => 'devise/sessions#destroy' # added this becaause of sign_out bug.
     get '/users/sign_in' => 'devise/sessions#new'
   end
