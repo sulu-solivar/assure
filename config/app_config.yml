@@ -20,7 +20,7 @@ test:
   facebook_secret: 0729498050c860339acb88539af074b4
 
 heroku-dev:
-  server_name: assure-dev.herokuapp.com
+  server_name: sureify-stg.herokuapp.com
   facebook_key: 372280692807760
   facebook_secret: ebd7344c6a20bb059691a8db7d82e436
 

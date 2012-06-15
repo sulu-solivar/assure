@@ -4,7 +4,7 @@
 	@include dn;
 }
 
-.insurance_tabs_container, .insurance_contents_container {
+.insurance_tabs_container, .insurance_contents_container, .insurance_boxes {
 	width: 300px;
 	word-wrap: break-word;
 }
@@ -25,4 +25,19 @@
 	height: 45px;
 	width: 25px;
 	z-index: 300;
+}
+
+
+// this SCSS if for displaying the first insurance by default
+#insurance_contents li {
+	&:first-child {
+		@include db;
+	}
+}
+#insurance_tabs li {
+	&:first-child {
+		.insurance_tab_connector {
+			@include db;
+		}
+	}
 }

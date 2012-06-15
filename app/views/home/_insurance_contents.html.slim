@@ -1,8 +1,8 @@
 .insurance_contents_container.fl
 
-	ul.bordered_list.contents
+	ul.bordered_list.contents#insurance_contents
 
-		- @insurances.each do |i|
+		- @insurances.each_with_index do |i, index|
 			li id="insurance_#{i.id}"
 				.insurance_head
 					h3.green_head.fl= i.plan.plan + ' Insurance'
@@ -12,7 +12,7 @@
 						.clearfix
 					.clearfix
 
-				.black_text.mtm.fb= i.carrier_name
+				.black_text.mtm.fb= beautify_params 'Carrier Name', ( best_in_place i, :carrier_name, :nil => 'Enter plan name'), 100
 				.mtm
 					= beautify_params 'Plan Name', ( best_in_place i, :plan_name, :nil => 'Enter plan name'), 100
 					= beautify_params 'Policy Number', ( best_in_place i, :policy_number, :nil => 'Enter policy number'), 100
