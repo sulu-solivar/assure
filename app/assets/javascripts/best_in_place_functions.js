@@ -2,5 +2,9 @@
 
 $(document).ready(function() {
   /* Activating Best In Place */
-  jQuery(".best_in_place").best_in_place();
+  in_place_edit()
 });
+
+function in_place_edit() {
+  jQuery(".best_in_place").best_in_place();
+}
