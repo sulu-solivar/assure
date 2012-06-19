@@ -14,6 +14,9 @@ module NavigationHelpers
     when /landing/
       root_path
 
+    when /oauth\/authorize/
+      outh_authorize_path
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
