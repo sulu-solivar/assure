@@ -5,7 +5,7 @@
 = render :partial => 'dashboard_right', :locals => { :user => user }
 .clearfix
 
-= render :partial => 'insurance', :locals => { :user => user }
+= render :partial => 'insurances', :locals => { :user => user }
 
 / = render :partial => 'profile_chart_js', :locals => { :user => user }
 
@@ -28,8 +28,6 @@ javascript:
 	});
 
 	function send_request(){
-		// var info_type = $(this).closest('li').attr('id');
-		// var user = "#{user}"
 		$.ajax({
 			type: 'GET',
 			url: '/',

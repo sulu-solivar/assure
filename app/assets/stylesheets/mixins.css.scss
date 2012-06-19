@@ -240,7 +240,12 @@ $green: #96bd03;
 @mixin shadow {
 	-moz-box-shadow: 0px 0px 5px #AAA;
 	-webkit-box-shadow: 0px 0px 5px #AAA;
-	-box-shadow: 0px 0px 5px #AAA;
+	box-shadow: 0px 0px 5px #AAA;
+}
+@mixin custom_shadow($value) {
+	-moz-box-shadow: $value;
+	-webkit-box-shadow: $value;
+	box-shadow: $value;
 }
 @mixin clearfix {
 	clear: both;

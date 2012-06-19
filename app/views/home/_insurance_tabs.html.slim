@@ -6,7 +6,6 @@
 			li.cp content-id="insurance_#{i.id}"
 				= placeholder 25, 25, :class => 'fl'
 				.green_head.fl.mlm= i.plan.plan
-
 				- if i.link
 					.fr
 						.gray_text.fl.mlm.lh25 visit
@@ -15,3 +14,9 @@
 
 				.clearfix
 				div id="insurance_#{i.id}_connector" class="insurance_tab_connector tab_connector"
+
+		li.cp.dn id="new_insurance"
+			= placeholder 25, 25, :class => 'fl'
+			.fl.mlm= select_tag :plan_type, options_from_collection_for_select(Plan.all, :id, :plan), :prompt => 'Select Plan Type', :class => 'blue_input'
+			.fl.mlm= button_tag 'Add', :class => 'btn add_insurance', :remote => true
+			.clearfix

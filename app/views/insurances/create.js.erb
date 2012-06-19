@@ -1,0 +1,2 @@
+$('#insurances').replaceWith("<%= escape_javascript( render :partial => 'home/insurance', :locals => { :user => @user } ) %>")
+reset_insurance_contents_height()

@@ -1,6 +1,6 @@
 class Insurance < ActiveRecord::Base
 
-	validates :carrier_name, :plan_name, :presence => true
+	validates :plan_id, :presence => true
 	
 	# relations
   belongs_to :plan
