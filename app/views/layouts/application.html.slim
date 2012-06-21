@@ -7,6 +7,8 @@ html
 		title= content_for?(:title) ? yield(:title) : "Sureify"
 		meta content="" name="description"
 		meta content="" name="author"
+		= render :partial => 'shared/fb_key'
+		
 		= stylesheet_link_tag    "application", :media => "all"
 		= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
 		= javascript_include_tag "application"
@@ -18,10 +20,12 @@ html
 			| try{Typekit.load();}catch(e){}
 
 		= yield (:head)
-	body
+	body app_key="#{APP_CONFIG['facebook_key']}"
+		#fb-root
 		#wrapper
 			= render :partial => 'shared/header'
 			= render :partial => 'shared/notice'
+			
 			.container.container_padding
 				.mtl
 					= yield

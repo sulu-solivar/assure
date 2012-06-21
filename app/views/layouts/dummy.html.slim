@@ -1,4 +1,4 @@
-doctype
+doctype html
 html
 	head
 		meta charset="utf-8"
@@ -7,10 +7,13 @@ html
 		title= content_for?(:title) ? yield(:title) : "Sureify"
 		meta content="" name="description"
 		meta content="" name="author"
+		
 		= stylesheet_link_tag    "application", :media => "all"
 		= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
 		= javascript_include_tag "application"
 		= csrf_meta_tags
 		= yield (:head)
-	body
+	body app_key="#{APP_CONFIG['facebook_key']}"
+		= render :partial => 'shared/fb_key'
+		#fb-root
 		= yield
