@@ -21,10 +21,7 @@ function add_insurance() {
 			data: { insurance: { plan_id: plan_type } },
 			cache: false,
 			success: function(response){
-				// if (response != "")
-				// 	$('#insurances').html('success');
-				// else
-				// 	$('#insurances').html('failed');
+				//
 			}
 		})
 	})
@@ -50,7 +47,7 @@ function send_insurance_update_request(element) {
 
 	$('#insurance_contents .best_in_place').bind("ajax:success", function(){
 		$.ajax({
-			type: 'PUT',
+			type: 'GET',
 			url: '/insurances/'+insurance_id,
 			cache: false,
 			success: function(response) {
