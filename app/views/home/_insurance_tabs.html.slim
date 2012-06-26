@@ -1,22 +1,10 @@
-.insurance_tabs_container.fl
+ul.bordered_list.tabs#insurance_tabs
 
-	ul.bordered_list.tabs#insurance_tabs
+	- @insurances.each do |i|
+		= render :partial => 'home/insurance_tab', :locals => { :i => i }
 
-		- @insurances.each do |i|
-			li.cp content-id="insurance_#{i.id}"
-				= placeholder 25, 25, :class => 'fl'
-				.green_head.fl.mlm= i.plan.plan
-				- if i.link
-					.fr
-						.gray_text.fl.mlm.lh25 visit
-						= link_to truncate( i.plan_name, :length => 20 ), "http://#{i.link}", :target => '_blank', :class => 'fl fb mlm lh25'
-						.clearfix
-
-				.clearfix
-				div id="insurance_#{i.id}_connector" class="insurance_tab_connector tab_connector"
-
-		li.cp.dn id="new_insurance"
-			= placeholder 25, 25, :class => 'fl'
-			.fl.mlm= select_tag :plan_type, options_from_collection_for_select(Plan.all, :id, :plan), :prompt => 'Select Plan Type', :class => 'blue_input'
-			.fl.mlm= button_tag 'Add', :class => 'btn add_insurance', :remote => true
-			.clearfix
+	li.cp.dn id="new_insurance"
+		= placeholder 25, 25, :class => 'fl'
+		.fl.mlm= select_tag :plan_type, options_from_collection_for_select(Plan.all, :id, :plan), :prompt => 'Select Plan Type', :class => 'blue_input'
+		.fl.mlm= button_tag 'Add', :class => 'btn add_insurance', :remote => true
+		.clearfix

@@ -10,6 +10,7 @@
 / = render :partial => 'profile_chart_js', :locals => { :user => user }
 
 javascript:
+
 	// request after bluring from the inplace edit inputs and selects
 	$('.dashboard_profile li input, .dashboard_profile li select').live('blur',function(e){
 		send_request();
@@ -27,6 +28,7 @@ javascript:
 		}
 	});
 
+	// 
 	function send_request(){
 		$.ajax({
 			type: 'GET',

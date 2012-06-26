@@ -1,0 +1,12 @@
+- tab_connector = tab_connector if defined?(tab_connector)
+li.cp content-id="insurance_#{i.id}" id="insurance_tab_#{i.id}"
+	= placeholder 25, 25, :class => 'fl'
+	.green_head.fl.mlm= i.plan.plan
+	- if i.link
+		.fr
+			.gray_text.fl.mlm.lh25 visit
+			= link_to truncate( i.plan_name, :length => 20 ), "http://#{i.link}", :target => '_blank', :class => 'fl fb mlm lh25'
+			.clearfix
+
+	.clearfix
+	div id="insurance_#{i.id}_connector" class="insurance_tab_connector tab_connector #{ "disp_imp" if (tab_connector == true) }" 

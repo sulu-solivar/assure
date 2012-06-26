@@ -1,3 +1,6 @@
-= render :partial => 'home/insurance_tabs', :locals => { :user => user }
-= render :partial => 'home/insurance_contents', :locals => { :user => user }
-.clearfix
+#insurances
+	.insurance_tabs_container.fl
+		= render :partial => 'home/insurance_tabs', :locals => { :user => user }
+	.insurance_contents_container.fl
+		= render :partial => 'home/insurance_contents', :locals => { :user => user }
+	.clearfix

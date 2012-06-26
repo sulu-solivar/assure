@@ -3,9 +3,9 @@ header
 		- if user_signed_in?
 			- if current_user.email == 'guest@sureify.com'
 				.fl.fb style="line-height: 30px;"
-					|This is guest account and is only for trial purpose. Please 
+					|This is guest account and is only for trial purposes. Please 
 					= link_to 'create an account', destroy_user_session_path
-					|for using SURIEFY
+					|to use SURIEFY.
 			.top_links
 				.icon.fl.dn
 					.update
