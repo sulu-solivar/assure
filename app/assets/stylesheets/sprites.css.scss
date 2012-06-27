@@ -77,6 +77,13 @@
 @mixin linked_in_hover {
 	background-position: -56px -112px;
 }
+@mixin delete_button {
+	background: url('icons/delete.jpg') no-repeat;
+	width: 20px;
+	height: 19px;
+	@include cp;
+}
+
 .top_links {
 	@include fr;
 }
@@ -363,41 +370,6 @@ ul.dashboard_profile > li {
 	height: 70px;
 }
 
-//.top_links {
-//	@include fr;
-//	.icon {
-//		@include dib;
-//		@include top_links_icon;
-//		margin-left: 5px;
-//		cursor: pointer;
-//		background-position: -8px -1px;
-//		width: 33px;
-//		height: 33px;
-//		.remake {
-//			@include top_links_icon;
-//			@include top_links_icon_size;
-//			background-position: -53px -11px;
-//		}
-
-//		.close {
-//			@include top_links_icon;
-//			@include top_links_icon_size;
-//			background-position: -90px -10px;
-//		}
-
-//		.plus {
-//			@include top_links_icon;
-//			@include top_links_icon_size;
-//			background-position: -124px -10px;
-//		}
-
-//		.settings {
-//			@include top_links_icon;
-//			@include top_links_icon_size;
-//			width: 22px;
-//			height: 22px;
-//			margin: 6px 0px 0px 6px;
-//			background-position: -155px -8px;
-//		}
-//	}
-//}
+.delete {
+	@include delete_button;
+}

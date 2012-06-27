@@ -36,4 +36,12 @@ class InsurancesController < ApplicationController
 		end
 	end
 
+	def destroy
+		@user = current_user
+		@insurance = @user.insurances.find params[:id]
+		if @insurance.delete
+			render :json => @insurance.as_json
+		end
+	end
+
 end

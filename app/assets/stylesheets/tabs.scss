@@ -28,15 +28,25 @@
 }
 
 
-// this SCSS if for displaying the first insurance by default
+// this SCSS if for displaying the first insurance by default and also for hover delete button
+
 #insurance_contents li {
 	&:first-child {
 		@include db;
 	}
 }
+
 #insurance_tabs li {
 	&:first-child {
 		.insurance_tab_connector {
+			@include db;
+		}
+	}
+	.delete {
+		@include dn;
+	}
+	&:hover {
+		.delete {
 			@include db;
 		}
 	}

@@ -13,6 +13,7 @@
  *= require jquery.ui.all
  *= require mixins
  *= require basic
+ *= require default
  *= require best_in_place
  *= require common
  *= require dashboard

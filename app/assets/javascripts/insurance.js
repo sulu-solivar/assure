@@ -2,6 +2,7 @@ $(document).ready(function(){
 	new_insurance()
 	add_insurance()
 	update_insurance()
+	delete_insurance()
 })
 
 function new_insurance() {
@@ -40,6 +41,27 @@ function update_insurance() {
 		var that = $(this)
 		send_insurance_update_request(that)
 	})
+}
+
+function delete_insurance() {
+	
+	$('.delete_insurance').live('click', function(){
+		var insurance_id = $(this).closest('li').attr('ins-id')
+
+		$.ajax({
+			type: 'DELETE',
+			url: '/insurances/'+insurance_id,
+			cache: false,
+			success: function(response) {
+				// removing insurance elements on deleting it
+				$('#insurance_tab_'+insurance_id+', #insurance_'+insurance_id).remove()
+				reset_insurance_contents_height() //resetting the insurance contents heights
+			}
+		})
+
+		return false
+	})
+
 }
 
 function send_insurance_update_request(element) {
