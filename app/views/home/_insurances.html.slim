@@ -1,8 +1,8 @@
-h2.mbl.insurance_boxes
+h2.fl.mbl.insurance_boxes
 	span.fl.fb Your Insurance
 	= link_to 'Add', '#', :class => 'new_insurance fr'
-	div
-		
 	.clearfix
+= render 'insurance_total'
+.clearfix
 
 = render :partial => 'insurance', :locals => { :user => user }

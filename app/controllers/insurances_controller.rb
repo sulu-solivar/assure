@@ -5,6 +5,7 @@ class InsurancesController < ApplicationController
 	def show
 		@user = current_user
 		@insurance = @user.insurances.find params[:id]
+		@total_annual_insurance = @user.total_annual_insurance
 		respond_to do |format|
 			format.js { }
 		end

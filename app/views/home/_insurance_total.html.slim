@@ -1,0 +1,6 @@
+#total_insurance.fl
+	.fl.mbl.mll.insurance_boxes
+		= beautify_params 'Total Annual Insurance', @total_annual_insurance
+	.fl.mbl.mll.insurance_boxes
+		= beautify_params 'Total Monthly Insurance', ("%0.2f" % (@total_annual_insurance.to_f/12))
+	.clearfix

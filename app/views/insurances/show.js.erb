@@ -1,2 +1,3 @@
 <%- insurance_id = params[:id] %>
 $("#insurance_tab_<%= insurance_id %>").replaceWith("<%= escape_javascript( render :partial => 'home/insurance_tab', :locals => { :i => @insurance, :tab_connector => true }) %>")
+$("#total_insurance").replaceWith("<%= escape_javascript( render :partial => 'home/insurance_total' ) %>")
