@@ -32,3 +32,8 @@ input, textarea, select {
 		@include custom_shadow(0px 2px 2px #999);
 	}
 }
+
+
+#plan_type {
+	width: 170px;
+}
