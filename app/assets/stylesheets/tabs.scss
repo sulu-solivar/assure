@@ -54,6 +54,7 @@
 
 ul.nav-tabs {
 	a {
+		//@include fb;
 		&:focus {
 			@include tdn;
 		}
