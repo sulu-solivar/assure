@@ -1,3 +1,9 @@
-$('#insurances').replaceWith("<%= escape_javascript( render :partial => 'home/insurance', :locals => { :user => @user } ) %>")
+// $('#insurances').replaceWith("<%= escape_javascript( render :partial => 'home/insurance', :locals => { :user => @user } ) %>")
+
+$('#new_insurance').before("<%= escape_javascript( render :partial => 'home/insurance_tab', :locals => { :i => @insurance } ) %>")
+$('#insurance_contents').append("<%= escape_javascript( render :partial => 'home/insurance_content', :locals => { :i => @insurance } ) %>")
+insurance_id = <%= @insurance.id %>
+$('#insurance_'+insurance_id+'_connector, #insurance_'+insurance_id).show()
+
 reset_insurance_contents_height()
 in_place_edit()

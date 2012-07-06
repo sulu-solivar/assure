@@ -1,20 +1,4 @@
 ul.bordered_list.contents#insurance_contents
 
 	- @insurances.each_with_index do |i, index|
-		li id="insurance_#{i.id}" content-id="#{i.id}"
-			.insurance_head
-				h3.green_head.fl= i.plan.plan + ' Insurance'
-
-				.fr
-					.lh25= best_in_place i, :link, :nil => 'Give link here'
-					.clearfix
-				.clearfix
-
-			.black_text.mtm.fb= beautify_params 'Carrier Name', ( best_in_place i, :carrier_name, :nil => 'Enter carrier name'), 100
-			.mtm
-				= beautify_params 'Plan Name', ( best_in_place i, :plan_name, :nil => 'Enter plan name'), 100
-				= beautify_params 'Policy Number', ( best_in_place i, :policy_number, :nil => 'Enter policy number'), 100
-				= beautify_params 'Start Date', ( best_in_place i, :start_date, :nil => 'Enter start date', type: :date), 100
-				= beautify_params 'Renewal Date', ( best_in_place i, :renewal_date, :nil => 'Enter renewal date', type: :date), 100
-				= beautify_params 'Annual Premium', ( best_in_place i, :annual_premium, :nil => 'Enter annual premium'), 100
-				= beautify_params 'Comment', ( best_in_place i, :comment, :nil => 'Enter comment here', type: :textarea), 100
+		= render :partial => 'home/insurance_content', :locals => { :i => i }

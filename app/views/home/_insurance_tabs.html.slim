@@ -5,6 +5,6 @@ ul.bordered_list.tabs#insurance_tabs
 
 	li.cp.dn id="new_insurance"
 		= placeholder 25, 25, :class => 'fl'
-		.fl.mlm= select_tag :plan_type, options_from_collection_for_select(Plan.all, :id, :plan), :prompt => 'Select Plan Type', :class => 'blue_input'
-		.fl.mlm= button_tag 'Add', :class => 'btn add_insurance', :remote => true
+		.fl.mlm= select_tag :plan_type, options_from_collection_for_select(Plan.all, :id, :plan), :prompt => 'Select Plan Type', :class => 'blue_input add_insurance', :remote => true
+		/ .fl.mlm= button_tag 'Add', :class => 'btn add_insurance', :remote => true
 		.clearfix

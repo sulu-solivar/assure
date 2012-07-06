@@ -8,6 +8,9 @@
 	@include rad5;
 	@include default_font;
 	font-size: 12px;
+	option {
+		background: $default_link;
+	}
 	&:focus {
 		outline-style: none;
 	}
@@ -35,5 +38,5 @@ input, textarea, select {
 
 
 #plan_type {
-	width: 170px;
+	width: 240px;
 }

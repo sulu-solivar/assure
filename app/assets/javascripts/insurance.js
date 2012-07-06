@@ -5,6 +5,8 @@ $(document).ready(function(){
 	delete_insurance()
 })
 
+// all functions
+
 function new_insurance() {
 	$('.new_insurance').live('click',function(){
 		$('#new_insurance').show()
@@ -13,7 +15,7 @@ function new_insurance() {
 }
 
 function add_insurance() {
-	$('.add_insurance').live('click',function(){
+	$('.add_insurance').live('change',function(){
 		var plan_type = $('#plan_type').val()
 		$('#new_insurance').hide()
 		$.ajax({
