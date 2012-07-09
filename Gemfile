@@ -8,6 +8,7 @@ gem 'omniauth-facebook'
 gem 'nifty-generators'
 gem "bootstrap-sass", ">= 2.0.1"
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem "haml", ">= 3.1.4"
 gem "slim-rails"
 gem 'formtastic'
@@ -30,7 +31,6 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-  gem 'jquery-ui-rails'
 end
 
 group :development do
