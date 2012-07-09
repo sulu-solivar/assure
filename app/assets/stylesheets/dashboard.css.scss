@@ -1,16 +1,19 @@
 @import 'mixins';
 
+#profile_info {
+	@include relative;
+	h3 {
+		margin:10px 0px;
+		line-height: 24px;
+	}
+}
+
 .dashboard_left {
 	@include fl;
 	width: 500px;
-	#profile_info {
-		@include relative;
-		h3 {
-			margin:10px 0px;
-			line-height: 24px;
-		}
-	}
 }
+
+
 .dashboard_right {
 	width: 370px;
 	@include fl;

@@ -1,11 +1,15 @@
 - user = @user
+
 = render :partial => 'dashboard_header', :locals => { :user => user }
+= render :partial => 'profile_overview', :locals => { :user => user }
 
 ul class="nav nav-tabs" id="#main_tabs"
-  li class="active mlm"
-    a href="#dashboard_panel" data-toggle="tab" Profile
-  li
-  	a href="#insurance_panel" data-toggle="tab" Insurance
+	li class="active mlm"
+		a href="#dashboard_panel" data-toggle="tab"
+			h2.fb Profile
+	li
+		a href="#insurance_panel" data-toggle="tab"
+			h2.fb Insurance
 .tab-content
 	#dashboard_panel.tab-pane.active
 		= render :partial => 'dashboard_left', :locals => { :user => user }

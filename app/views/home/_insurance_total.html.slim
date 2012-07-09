@@ -1,6 +1,6 @@
 #total_insurance.fl
-	.fl.mbl.mll.insurance_boxes
-		= beautify_params 'Total Annual Insurance', "$ #{@total_annual_insurance} /-", 150
-	.fl.mbl.mll.insurance_boxes
-		= beautify_params 'Total Monthly Insurance', "$ #{('%0.2f' % (@total_annual_insurance.to_f/12))} /-", 150
+	.mll.insurance_boxes
+		h3= beautify_params 'Annual Premium', "$ #{@total_annual_insurance}", 150, :key_class => 'fl mll fb', :value_class => 'tr prl'
+	.mll.insurance_boxes
+		h3= beautify_params 'Monthly Premium', "$ #{('%0.2f' % (@total_annual_insurance.to_f/12))}", 150, :key_class => 'fl mll fb', :value_class => 'tr prl'
 	.clearfix

@@ -1,11 +1,11 @@
 module ApplicationHelper
 
-	def beautify_params key, value = nil, key_width = 200
+	def beautify_params key, value = nil, key_width = 200, opts = {}
 		if value
 			contents = content_tag(
-					'b', key, :class => 'fl', :style => "width:#{key_width}px;"
+					'b', key, :class => "fl #{opts[:key_class]}", :style => "width:#{key_width}px; #{opts[:key_style]}"
 				) + content_tag(
-					'div', value, :class => 'light_text', :style => "margin-left:#{key_width+10}px;"
+					'div', value, opts.merge( :class => "light_text #{opts[:value_class]}", :style => "margin-left:#{key_width+10}px;  #{opts[:value_style]}" )
 				)
 			
 			return content_tag( 

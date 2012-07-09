@@ -1,53 +1,56 @@
-.profile_pic.fl.icon= user_image user, :width => 76
+div
+	.profile_pic.fl.icon= user_image user, :width => 76
 
-#profile_info.mbm.fl
-	.fl.mlm
-		= render :partial => 'score', :locals => { :user => user }
+	#profile_info.mbm.fl
+		.fl.mlm
+			= render :partial => 'score', :locals => { :user => user }
 
-		.fl.mlm style="width:100px;"
-			h3.no_top_margin
-				.icon.fl
-					.arrow
-				.fl.mls.fb +230
-				.clearfix
-			h3.no_top_margin
-				.icon.fl
-					.line_red
-				.fl.mls.fb -25
-				.clearfix
+			.fl.mlm style="width:100px;"
+				h3.no_top_margin
+					.icon.fl
+						.arrow
+					.fl.mls.fb +230
+					.clearfix
+				h3.no_top_margin
+					.icon.fl
+						.line_red
+					.fl.mls.fb -25
+					.clearfix
 
-		.fl.mlm style="width:130px;"
-			h3.no_top_margin
-				.icon.fl
-					.pie
-				.fl.mls.fb +/-10
-				.clearfix
-			h3.no_top_margin
-				.icon.fl
-					.bar
-				.fl.mls.fb #13/12000
-				.clearfix
-		.clearfix
+			.fl.mlm style="width:130px;"
+				h3.no_top_margin
+					.icon.fl
+						.pie
+					.fl.mls.fb +/-10
+					.clearfix
+				h3.no_top_margin
+					.icon.fl
+						.bar
+					.fl.mls.fb #13/12000
+					.clearfix
+			.clearfix
 
-		h2.mts= full_name user
+			h2.mts= full_name user
 
-	.social_links
-		.icon.fl
-			- if user == 'guest@sureify.com'
-				- if @authentications.count == 1 and @authentications[0].provider == 'facebook'
-					=link_to '', fb_profile, :class => 'facebook_on'
+		.social_links
+			.icon.fl
+				- if user == 'guest@sureify.com'
+					- if @authentications.count == 1 and @authentications[0].provider == 'facebook'
+						=link_to '', fb_profile, :class => 'facebook_on'
+					- else
+						=link_to '', fb_profile, :class => 'facebook'
 				- else
-					=link_to '', fb_profile, :class => 'facebook'
-			- else
-				.facebook
-		.icon.fl.mls
-			- if user == 'guest@sureify.com'
-				- if @authentications.count == 1 and @authentications[0].provider == 'linkedin'
-					.linked_in_on
+					.facebook
+			.icon.fl.mls
+				- if user == 'guest@sureify.com'
+					- if @authentications.count == 1 and @authentications[0].provider == 'linkedin'
+						.linked_in_on
+					- else
+						.linked_in
 				- else
 					.linked_in
-			- else
-				.linked_in
+			.clearfix
 		.clearfix
+	.fr
+		= render 'insurance_total'
 	.clearfix
-.clearfix
