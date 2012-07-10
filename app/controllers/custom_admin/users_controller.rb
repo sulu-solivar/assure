@@ -4,7 +4,7 @@ class CustomAdmin::UsersController < ApplicationController
 
 	def index
 		@users = User.all
-		unless current_user.email == 'eshwarcc@gmail.com'
+		unless current_user.email == 'venkat@solivar.com'
 			redirect_to root_path
 		end
 	end
