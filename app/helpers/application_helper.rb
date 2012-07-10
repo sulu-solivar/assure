@@ -5,7 +5,7 @@ module ApplicationHelper
 			contents = content_tag(
 					'b', key, :class => "fl #{opts[:key_class]}", :style => "width:#{key_width}px; #{opts[:key_style]}"
 				) + content_tag(
-					'div', value, opts.merge( :class => "light_text #{opts[:value_class]}", :style => "margin-left:#{key_width+10}px;  #{opts[:value_style]}" )
+					'div', value, :class => "light_text #{opts[:value_class]}", :style => "margin-left:#{key_width+10}px;  #{opts[:value_style]}"
 				)
 			
 			return content_tag( 
