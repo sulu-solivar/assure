@@ -17,17 +17,28 @@ class AuthenticationsController < ApplicationController
       user = User.new
       user.apply_omniauth omniauth
       if user.save
+        
         # flash[:notice] = "Signed in successfully."
         sign_in_and_redirect(:user, user)
       else
         session[:omniauth] = omniauth.except('extra')
+        omniauth[:extra][:raw_info][:education].each do |edu|
+          if edu[:type] == "College"
+            session[:college] = edu
+            break
+          end
+        end
+        birthday = omniauth[:extra][:raw_info][:birthday].split('/')
+        
+        session[:birthday] = birthday[0]+'-'+birthday[1]+'-'+birthday[2]
+        session[:location] = omniauth[:info][:location]
+        session[:work] = omniauth[:extra][:raw_info][:work][0]
+        session[:relationship_status] = omniauth[:extra][:raw_info][:relationship_status]
+
         redirect_to new_user_registration_url
       end
     end
   end
-
-
-
 
   def destroy
     @authentication = current_user.authentications.find(params[:id])

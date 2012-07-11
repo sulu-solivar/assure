@@ -1,7 +1,7 @@
 module ProfileHelper
 
 	def relationships
-		return [['single','Single'], ['committed','Committed'], ['married','Married'], ['complicated','Complicated']]
+		return [['Single','Single'], ['Committed','Committed'], ['Married','Married'], ['Complicated','Complicated'], ['In a relationship', 'In a relationship'] ]
 	end
 	
 	def house_types
