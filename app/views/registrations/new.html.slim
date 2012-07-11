@@ -22,13 +22,3 @@ h2 Sign up
 
 
 = render :partial => "devise/shared/links"
-br
-	= session[:birthday]
-br
-	= "graduate "+session[:college][:school][:name]+", "+session[:college][:year][:name]
-br
-	= session[:work][:position][:name]+", "+session[:work][:employer][:name]+", "+session[:work][:location][:name]
-br
-	= session[:location]
-br
-	= session[:relationship_status]

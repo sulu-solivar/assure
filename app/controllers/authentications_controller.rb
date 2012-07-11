@@ -22,18 +22,25 @@ class AuthenticationsController < ApplicationController
         sign_in_and_redirect(:user, user)
       else
         session[:omniauth] = omniauth.except('extra')
-        omniauth[:extra][:raw_info][:education].each do |edu|
-          if edu[:type] == "College"
-            session[:college] = edu
-            break
+        if omniauth[:extra][:raw_info][:education].present?
+          omniauth[:extra][:raw_info][:education].each do |edu|
+            if edu[:type] == "College"
+              session[:college] = edu
+              break
+            end
           end
+        else
+          session[:college] = nil
         end
-        birthday = omniauth[:extra][:raw_info][:birthday].split('/')
-        
-        session[:birthday] = birthday[0]+'-'+birthday[1]+'-'+birthday[2]
-        session[:location] = omniauth[:info][:location]
-        session[:work] = omniauth[:extra][:raw_info][:work][0]
-        session[:relationship_status] = omniauth[:extra][:raw_info][:relationship_status]
+        if omniauth[:extra][:raw_info][:birthday].present?
+          birthday = omniauth[:extra][:raw_info][:birthday].split('/')
+          session[:birthday] = birthday[0]+'-'+birthday[1]+'-'+birthday[2]
+        else
+          session[:birthday] = nil
+        end
+        session[:location] = omniauth[:info][:location].present? ? omniauth[:info][:location] : nil
+        session[:work] = omniauth[:extra][:raw_info][:work].present? ? omniauth[:extra][:raw_info][:work][0] : nil
+        session[:relationship_status] = omniauth[:extra][:raw_info][:relationship_status].present? ? omniauth[:extra][:raw_info][:relationship_status] : nil
 
         redirect_to new_user_registration_url
       end
